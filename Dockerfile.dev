@@ -1,0 +1,11 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+# this line is not strictly necessary if used with compose
+COPY . .  
+
+CMD ["npm", "run", "start"] 
